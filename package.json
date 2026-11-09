@@ -1,0 +1,133 @@
+{
+  "name": "px-rem-converter",
+  "displayName": "PX REM Converter",
+  "description": "Konwersja px/rem we właściwości font-size lub w wybranych właściwościach CSS.",
+  "version": "1.1.0",
+  "publisher": "local-tools",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Formatters"
+  ],
+  "keywords": [
+    "px",
+    "rem",
+    "css",
+    "scss",
+    "less",
+    "converter",
+    "units"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "pxRem.convertFontSizeLocalPxToRem",
+        "title": "Opcja 1 — font-size (zaznaczenie / kursor): PX → REM",
+        "category": "PX / REM"
+      },
+      {
+        "command": "pxRem.convertFontSizeLocalRemToPx",
+        "title": "Opcja 1 — font-size (zaznaczenie / kursor): REM → PX",
+        "category": "PX / REM"
+      },
+      {
+        "command": "pxRem.convertFontSizeDocumentPxToRem",
+        "title": "Opcja 2 — font-size (cały dokument): PX → REM",
+        "category": "PX / REM"
+      },
+      {
+        "command": "pxRem.convertFontSizeDocumentRemToPx",
+        "title": "Opcja 2 — font-size (cały dokument): REM → PX",
+        "category": "PX / REM"
+      },
+      {
+        "command": "pxRem.convertConfiguredPropertiesPxToRem",
+        "title": "Opcja 3 — skonfigurowane właściwości (cały dokument): PX → REM",
+        "category": "PX / REM"
+      },
+      {
+        "command": "pxRem.convertConfiguredPropertiesRemToPx",
+        "title": "Opcja 3 — skonfigurowane właściwości (cały dokument): REM → PX",
+        "category": "PX / REM"
+      }
+    ],
+    "submenus": [
+      {
+        "id": "pxRem.contextMenu",
+        "label": "Konwersja PX / REM"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "submenu": "pxRem.contextMenu",
+          "group": "1_modification@10",
+          "when": "editorTextFocus && !editorReadonly"
+        }
+      ],
+      "pxRem.contextMenu": [
+        {
+          "command": "pxRem.convertFontSizeLocalPxToRem",
+          "group": "1_local@1"
+        },
+        {
+          "command": "pxRem.convertFontSizeLocalRemToPx",
+          "group": "1_local@2"
+        },
+        {
+          "command": "pxRem.convertFontSizeDocumentPxToRem",
+          "group": "2_font_document@1"
+        },
+        {
+          "command": "pxRem.convertFontSizeDocumentRemToPx",
+          "group": "2_font_document@2"
+        },
+        {
+          "command": "pxRem.convertConfiguredPropertiesPxToRem",
+          "group": "3_configured@1"
+        },
+        {
+          "command": "pxRem.convertConfiguredPropertiesRemToPx",
+          "group": "3_configured@2"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "PX / REM Converter",
+      "properties": {
+        "pxRem.rootFontSize": {
+          "type": "number",
+          "default": 16,
+          "minimum": 0.01,
+          "description": "Rozmiar bazowy w pikselach używany przy przeliczaniu rem. Domyślnie 16px, czyli 1rem = 16px."
+        },
+        "pxRem.precision": {
+          "type": "number",
+          "default": 6,
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Maksymalna liczba miejsc po przecinku w wyniku konwersji. Nadmiarowe zera są usuwane."
+        },
+        "pxRem.properties": {
+          "type": "array",
+          "default": [
+            "font-size",
+            "margin",
+            "padding"
+          ],
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Lista dokładnych nazw właściwości CSS konwertowanych w opcji 3. Usuń np. \"margin\", aby pomijać deklaracje margin. Możesz dodać np. \"width\", \"gap\" lub \"margin-top\"."
+        }
+      }
+    }
+  }
+}
