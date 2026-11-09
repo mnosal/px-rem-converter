@@ -5,6 +5,16 @@
   "version": "1.1.0",
   "publisher": "local-tools",
   "license": "MIT",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/mnosal/px-rem-converter.git"
+  },
+
+  "homepage": "https://github.com/mnosal/px-rem-converter#readme",
+
+  "bugs": {
+      "url": "https://github.com/mnosal/px-rem-converter/issues"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
@@ -27,32 +37,32 @@
     "commands": [
       {
         "command": "pxRem.convertFontSizeLocalPxToRem",
-        "title": "Opcja 1 — font-size (zaznaczenie / kursor): PX → REM",
+        "title": "font-size (zaznaczenie): PX → REM",
         "category": "PX / REM"
       },
       {
         "command": "pxRem.convertFontSizeLocalRemToPx",
-        "title": "Opcja 1 — font-size (zaznaczenie / kursor): REM → PX",
+        "title": "font-size (zaznaczenie): REM → PX",
         "category": "PX / REM"
       },
       {
         "command": "pxRem.convertFontSizeDocumentPxToRem",
-        "title": "Opcja 2 — font-size (cały dokument): PX → REM",
+        "title": "font-size (cały dokument): PX → REM",
         "category": "PX / REM"
       },
       {
         "command": "pxRem.convertFontSizeDocumentRemToPx",
-        "title": "Opcja 2 — font-size (cały dokument): REM → PX",
+        "title": "font-size (cały dokument): REM → PX",
         "category": "PX / REM"
       },
       {
         "command": "pxRem.convertConfiguredPropertiesPxToRem",
-        "title": "Opcja 3 — skonfigurowane właściwości (cały dokument): PX → REM",
+        "title": "Skonfigurowane właściwości (cały dokument): PX → REM",
         "category": "PX / REM"
       },
       {
         "command": "pxRem.convertConfiguredPropertiesRemToPx",
-        "title": "Opcja 3 — skonfigurowane właściwości (cały dokument): REM → PX",
+        "title": "Skonfigurowane właściwości (cały dokument): REM → PX",
         "category": "PX / REM"
       }
     ],
