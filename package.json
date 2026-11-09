@@ -2,16 +2,14 @@
   "name": "px-rem-converter",
   "displayName": "PX REM Converter",
   "description": "Konwersja px/rem we właściwości font-size lub w wybranych właściwościach CSS.",
-  "version": "1.1.0",
-  "publisher": "local-tools",
+  "version": "1.1.1",
+  "publisher": "MiNos",
   "license": "MIT",
   "repository": {
       "type": "git",
       "url": "https://github.com/mnosal/px-rem-converter.git"
   },
-
   "homepage": "https://github.com/mnosal/px-rem-converter#readme",
-
   "bugs": {
       "url": "https://github.com/mnosal/px-rem-converter/issues"
   },
