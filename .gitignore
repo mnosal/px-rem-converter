@@ -1,0 +1,19 @@
+# Pakiety instalacyjne i archiwa
+*.vsix
+*.zip
+
+# Zależności
+node_modules/
+
+# Pliki testowe VS Code
+.vscode-test/
+
+# Logi
+*.log
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# macOS
+.DS_Store
